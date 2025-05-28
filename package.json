@@ -1,18 +1,18 @@
 {
-  "name": "cloudflare-starter",
+  "name": "ws-test",
   "type": "module",
   "version": "0.0.1",
   "description": "",
   "author": "oiij",
   "license": "MIT",
-  "homepage": "https://github.com/oiij/cloudflare-starter",
+  "homepage": "https://github.com/oiij/ws-test",
   "repository": {
     "type": "git",
-    "url": "git@github.com:oiij/cloudflare-starter.git"
+    "url": "git@github.com:oiij/ws-test.git"
   },
-  "bugs": "https://github.com/oiij/cloudflare-starter/issues",
+  "bugs": "https://github.com/oiij/ws-test/issues",
   "keywords": [
-    "cloudflare-starter"
+    "ws-test"
   ],
   "sideEffects": false,
   "exports": {
@@ -34,46 +34,39 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "build": "tsc --noEmit && tsup",
     "cf-typegen": "wrangler types",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepublishOnly": "pnpm build",
-    "release": "bumpp -r && npm publish --access public",
     "awe": "pnpx are-we-esm",
     "nmi": "pnpx node-modules-inspector",
-    "start": "esno src/index.ts",
     "test": "vitest",
     "update:deps": "taze -w && pnpm i",
     "type:check": "tsc --noEmit",
     "cz": "czg",
     "commit": "git pull && git add -A && pnpm cz && git push",
-    "link": "pnpm link --global",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "npx simple-git-hooks"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.2.0",
-    "@cloudflare/vitest-pool-workers": "^0.8.8",
-    "@cloudflare/workers-types": "^4.20250402.0",
+    "@antfu/eslint-config": "^4.13.2",
+    "@cloudflare/vitest-pool-workers": "^0.8.33",
+    "@cloudflare/workers-types": "^4.20250528.0",
     "@oiij/tsconfig": "^0.0.1",
-    "@types/node": "^22.13.1",
-    "@vitest/ui": "^3.0.5",
-    "bumpp": "^10.0.3",
-    "commitlint": "^19.7.1",
-    "cz-git": "^1.11.0",
-    "czg": "^1.11.0",
-    "eslint": "^9.20.1",
+    "@types/node": "^22.15.23",
+    "@vitest/ui": "^3.1.4",
+    "bumpp": "^10.1.1",
+    "commitlint": "^19.8.1",
+    "cz-git": "^1.11.1",
+    "czg": "^1.11.1",
+    "eslint": "^9.27.0",
     "eslint-plugin-format": "^1.0.1",
     "esno": "^4.8.0",
-    "lint-staged": "^15.4.3",
-    "simple-git-hooks": "^2.11.1",
-    "taze": "^18.5.0",
-    "tsup": "8.3.6",
-    "typescript": "^5.7.3",
-    "unbuild": "^3.3.1",
-    "vitest": "^3.0.5",
-    "wrangler": "^4.6.0"
+    "lint-staged": "^16.1.0",
+    "simple-git-hooks": "^2.13.0",
+    "taze": "^19.1.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4",
+    "wrangler": "^4.17.0"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged && pnpm type:check"
