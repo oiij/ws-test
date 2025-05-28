@@ -33,6 +33,7 @@
   ],
   "scripts": {
     "dev": "wrangler dev",
+    "build": "tsc --noEmit && tsdown",
     "deploy": "wrangler deploy",
     "cf-typegen": "wrangler types",
     "lint": "eslint .",
