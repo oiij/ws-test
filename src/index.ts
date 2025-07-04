@@ -15,9 +15,15 @@ let count = 0
 async function handleSession(request: Request, socket: WebSocket) {
   socket.accept()
   count += 1
-  socket.send(`connected, you are visitor number ${count}!`)
+  socket.send(JSON.stringify({
+    type: 'connect',
+    data: `connected, you are visitor number ${count}!`,
+  }))
   socket.addEventListener('message', (ev) => {
-    socket.send(`You said: ${ev.data}`)
+    socket.send(JSON.stringify({
+      type: 'message',
+      data: `You said: ${ev.data}`,
+    }))
   })
   socket.addEventListener('close', () => {
     count -= 1
